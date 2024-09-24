@@ -10,11 +10,11 @@ export default function Header() {
   };
 
   return (
-    <header className="flex items-center justify-start p-2 bg-gray-100">
+    <header className="flex items-center justify-start p-2 bg-white">
       {/* 로고 */}
       <div className="flex-shrink-0">
         {/* 기본 로고 크기 설정, 모바일 버전에서 크기를 변경 */}
-        <img src="/wecar_logo.png" alt="Wecar Logo" className="w-[165px] h-[60px] ml-4 md:ml-20 md:w-[300px] md:h-[100px]" />
+        <img src="/wecar_logo.png" alt="Wecar Logo" className="w-[165px] h-[60px] ml-4 md:ml-28 md:w-[300px] md:h-[100px]" />
       </div>
 
       {/* PC 버전 네비게이션 - 기존 그대로 유지 */}
