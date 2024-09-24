@@ -37,12 +37,47 @@ const Slider = () => {
             style={{ objectFit: 'cover', borderRadius: '20px' }} // 모서리를 둥글게 설정
             unoptimized
           />
+
+          {/* main1.jpg일 때 텍스트와 버튼 표시 */}
+          {index === 0 && (
+            <div className="absolute top-1/2 left-5 transform -translate-y-1/2 text-white text-left">
+              {/* 텍스트 애니메이션 - 위에서 아래로 */}
+              <div className={`transition-transform duration-1000 ease-out transform ${currentIndex === 0 ? 'translate-y-0 opacity-100' : 'translate-y-[-50px] opacity-0'}`}>
+                <p className="text-4xl mb-4">내차를 높은 가격으로</p>
+                <p className="text-3xl mb-4">판매하는</p>
+                <h1 className="text-5xl font-bold mb-6">팔아줘 중고차 서비스</h1>
+              </div>
+
+              {/* 버튼 애니메이션 - 아래에서 위로 */}
+              <button
+                className={`bg-red-500 text-white text-xl py-2 px-4 rounded-full hover:bg-red-600 transition duration-1000 transform ${
+                  currentIndex === 0 ? 'translate-y-0 opacity-100' : 'translate-y-[50px] opacity-0'
+                }`}
+              >
+                예약 바로가기
+              </button>
+            </div>
+          )}
+
+          {/* main2.jpg일 때 텍스트 표시 */}
+          {index === 1 && (
+            <div className="absolute top-1/2 left-5 transform -translate-y-1/2 text-black text-left">
+              {/* 텍스트 애니메이션 - 위에서 아래로 */}
+              <div className={`transition-transform duration-1000 ease-out transform ${currentIndex === 1 ? 'translate-y-0 opacity-100' : 'translate-y-[-50px] opacity-0'}`}>
+                <h1 className="text-6xl font-bold mb-4">WELCOME</h1>
+                <h2 className="text-5xl mb-4">
+                  <span className="text-red-500">WE</span>CAR MOBILITY
+                </h2>
+                <p className="text-4xl">자동차 진단&탁송 전문기업</p>
+              </div>
+            </div>
+          )}
         </div>
       ))}
 
       {/* 이전 버튼 */}
       <button
-        className="absolute top-[50%] left-5 transform -translate-y-1/2 text-white text-2xl border-2 border-white rounded-full w-10 h-10 flex items-center justify-center z-10"
+        className="absolute top-[50%] left-5 transform -translate-y-1/2 text-white text-2xl border-2 border-white rounded-full w-10 h-10 flex items-center justify-center z-10 hover:bg-red-500 hover:border-red-500 transition-colors duration-300"
         onClick={prevSlide}
       >
         {'<'}
@@ -50,7 +85,7 @@ const Slider = () => {
 
       {/* 다음 버튼 */}
       <button
-        className="absolute top-[50%] right-5 transform -translate-y-1/2 text-white text-2xl border-2 border-white rounded-full w-10 h-10 flex items-center justify-center z-10"
+        className="absolute top-[50%] right-5 transform -translate-y-1/2 text-white text-2xl border-2 border-white rounded-full w-10 h-10 flex items-center justify-center z-10 hover:bg-red-500 hover:border-red-500 transition-colors duration-300"
         onClick={nextSlide}
       >
         {'>'}
