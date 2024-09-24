@@ -1,29 +1,44 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 const Slider = () => {
   const images = ['/main1.jpg', '/main2.jpg', '/main3.jpg', '/main4.jpg', '/main5.jpg', '/main6.jpg']; // 이미지 경로 설정
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null); // Correctly typed ref
 
-  // 자동 슬라이드 기능
-  useEffect(() => {
-    const interval = setInterval(() => {
+  // Function to reset the interval
+  const resetInterval = () => {
+    if (intervalRef.current !== null) {
+      clearInterval(intervalRef.current);
+    }
+    intervalRef.current = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000); // 5초마다 이미지 변경
-    return () => clearInterval(interval); // 컴포넌트 언마운트 시 타이머 정리
+  };
+
+  useEffect(() => {
+    resetInterval(); // Initialize the interval when component mounts
+
+    return () => {
+      if (intervalRef.current !== null) {
+        clearInterval(intervalRef.current); // Clean up on unmount
+      }
+    };
   }, [images.length]);
 
   // 이전 이미지로 이동하는 함수
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+    resetInterval(); // Reset the interval on manual navigation
   };
 
   // 다음 이미지로 이동하는 함수
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    resetInterval(); // Reset the interval on manual navigation
   };
 
   return (
