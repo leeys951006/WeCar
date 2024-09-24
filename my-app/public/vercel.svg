@@ -1,0 +1,15 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" fill-rule="evenodd">
+    <path d="M0 0h200v60H0z" fill="#000" />
+    <path d="M30 15l15 30h-30z" fill="#fff" />
+    <path d="M30 45l15-30h-30z" fill="#fff" />
+    <path d="M70 15l15 30h-30z" fill="#fff" />
+    <path d="M70 45l15-30h-30z" fill="#fff" />
+    <path d="M110 15l15 30h-30z" fill="#fff" />
+    <path d="M110 45l15-30h-30z" fill="#fff" />
+    <path d="M150 15l15 30h-30z" fill="#fff" />
+    <path d="M150 45l15-30h-30z" fill="#fff" />
+    <path d="M190 15l15 30h-30z" fill="#fff" />
+    <path d="M190 45l15-30h-30z" fill="#fff" />
+  </g>
+</svg>
