@@ -41,14 +41,11 @@ const Slider = () => {
           {/* main1.jpg일 때 텍스트와 버튼 표시 */}
           {index === 0 && (
             <div className="absolute top-1/2 left-5 transform -translate-y-1/2 text-white text-left">
-              {/* 텍스트 애니메이션 - 위에서 아래로 */}
               <div className={`transition-transform duration-1000 ease-out transform ${currentIndex === 0 ? 'translate-y-0 opacity-100' : 'translate-y-[-50px] opacity-0'}`}>
                 <p className="text-4xl mb-4">내차를 높은 가격으로</p>
                 <p className="text-3xl mb-4">판매하는</p>
                 <h1 className="text-5xl font-bold mb-6">팔아줘 중고차 서비스</h1>
               </div>
-
-              {/* 버튼 애니메이션 - 아래에서 위로 */}
               <button
                 className={`bg-red-500 text-white text-xl py-2 px-4 rounded-full hover:bg-red-600 transition duration-1000 transform ${
                   currentIndex === 0 ? 'translate-y-0 opacity-100' : 'translate-y-[50px] opacity-0'
@@ -62,7 +59,6 @@ const Slider = () => {
           {/* main2.jpg일 때 텍스트 표시 */}
           {index === 1 && (
             <div className="absolute top-1/2 left-5 transform -translate-y-1/2 text-black text-left">
-              {/* 텍스트 애니메이션 - 위에서 아래로 */}
               <div className={`transition-transform duration-1000 ease-out transform ${currentIndex === 1 ? 'translate-y-0 opacity-100' : 'translate-y-[-50px] opacity-0'}`}>
                 <h1 className="text-6xl font-bold mb-4">WELCOME</h1>
                 <h2 className="text-5xl mb-4">
@@ -70,6 +66,71 @@ const Slider = () => {
                 </h2>
                 <p className="text-4xl">자동차 진단&탁송 전문기업</p>
               </div>
+            </div>
+          )}
+
+          {/* main3.jpg일 때 텍스트 표시 */}
+          {index === 2 && (
+            <div className="absolute top-1/2 left-5 transform -translate-y-1/2 text-white text-left">
+              <div className={`transition-transform duration-1000 ease-out transform ${currentIndex === 2 ? 'translate-y-0 opacity-100' : 'translate-y-[-50px] opacity-0'}`}>
+                <p className="text-5xl mb-4">KIA CPO DIAGNOSIS OF</p>
+                <p className="text-5xl mb-4">USED CAR PURCHASE</p>
+                <h1 className="text-6xl font-bold">기아 인증중고차 매입진단</h1>
+              </div>
+            </div>
+          )}
+
+          {/* main4.jpg일 때 텍스트와 예약 바로가기 버튼 표시 */}
+          {index === 3 && (
+            <div className="absolute top-1/2 left-5 transform -translate-y-1/2 text-white text-left">
+              <div className={`transition-transform duration-1000 ease-out transform ${currentIndex === 3 ? 'translate-y-0 opacity-100' : 'translate-y-[-50px] opacity-0'}`}>
+                <p className="text-5xl mb-4">자동차 진단</p>
+                <p className="text-5xl mb-4">평가사로 구성된</p>
+                <h1 className="text-6xl font-bold mb-8">자동차 진단 사업</h1>
+              </div>
+              <button
+                className={`bg-red-500 text-white text-xl py-2 px-4 rounded-full hover:bg-red-600 transition duration-1000 transform ${
+                  currentIndex === 3 ? 'translate-y-0 opacity-100' : 'translate-y-[50px] opacity-0'
+                }`}
+              >
+                예약 바로가기
+              </button>
+            </div>
+          )}
+
+          {/* main5.jpg일 때 텍스트와 예약 바로가기 버튼 표시 */}
+          {index === 4 && (
+            <div className="absolute top-1/2 left-5 transform -translate-y-1/2 text-white text-left">
+              <div className={`transition-transform duration-1000 ease-out transform ${currentIndex === 4 ? 'translate-y-0 opacity-100' : 'translate-y-[-50px] opacity-0'}`}>
+                <p className="text-5xl mb-4">안전하고</p>
+                <p className="text-5xl mb-4">정확한 탁송</p>
+                <h1 className="text-6xl font-bold mb-8">자동차 탁송 사업</h1>
+              </div>
+              <button
+                className={`bg-red-500 text-white text-xl py-2 px-4 rounded-full hover:bg-red-600 transition duration-1000 transform ${
+                  currentIndex === 4 ? 'translate-y-0 opacity-100' : 'translate-y-[50px] opacity-0'
+                }`}
+              >
+                예약 바로가기
+              </button>
+            </div>
+          )}
+
+          {/* main6.jpg일 때 텍스트와 예약 바로가기 버튼 표시 */}
+          {index === 5 && (
+            <div className="absolute top-1/2 left-5 transform -translate-y-1/2 text-white text-left">
+              <div className={`transition-transform duration-1000 ease-out transform ${currentIndex === 5 ? 'translate-y-0 opacity-100' : 'translate-y-[-50px] opacity-0'}`}>
+                <p className="text-5xl mb-4">중고차를 저렴하게</p>
+                <p className="text-5xl mb-4">구매하는</p>
+                <h1 className="text-6xl font-bold mb-8">구해줘중고차 서비스</h1>
+              </div>
+              <button
+                className={`bg-red-500 text-white text-xl py-2 px-4 rounded-full hover:bg-red-600 transition duration-1000 transform ${
+                  currentIndex === 5 ? 'translate-y-0 opacity-100' : 'translate-y-[50px] opacity-0'
+                }`}
+              >
+                예약 바로가기
+              </button>
             </div>
           )}
         </div>
