@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import React, { useState, useRef, useEffect } from 'react';
 
@@ -8,11 +8,11 @@ const HomeContent: React.FC = () => {
 
   // Array of service images and labels
   const services = [
-    { id: 1, image: 'service1.jpg', label: '서비스 1' },
-    { id: 2, image: 'service2.jpg', label: '서비스 2' },
-    { id: 3, image: 'service3.jpg', label: '서비스 3' },
-    { id: 4, image: 'service4.jpg', label: '서비스 4' },
-    { id: 5, image: 'service5.jpg', label: '서비스 5' },
+    { id: 1, image: 'service1.jpg', label: '진단서비스' },
+    { id: 2, image: 'service2.jpg', label: '탁송서비스' },
+    { id: 3, image: 'service3.jpg', label: '내차로제주로' },
+    { id: 4, image: 'service4.jpg', label: '구해줘중고차' },
+    { id: 5, image: 'service5.jpg', label: '팔아줘중고차' },
   ];
 
   // Refs to measure the height of the vertical list
@@ -40,8 +40,8 @@ const HomeContent: React.FC = () => {
     <div className="bg-white py-12 px-20 mt-20 ml-40">
       {/* Top Section: Title and Description */}
       <div className="mb-16">
-        <h1 className="text-6xl font-extrabold mb-8 text-black">위카 모빌리티의 핵심 서비스</h1>
-        <p className="text-2xl md:text-3xl text-black">위카만의 전문화된 자동차 서비스를 통해 편리한 자동차 생활을 누리세요.</p>
+        <h1 className="text-5xl font-extrabold mb-6 text-black">위카 모빌리티의 핵심 서비스</h1>
+        <p className="text-xl md:text-2xl text-black">위카만의 전문화된 자동차 서비스를 통해 편리한 자동차 생활을 누리세요.</p>
       </div>
 
       {/* Bottom Section: Services List and Image Display */}
@@ -55,9 +55,11 @@ const HomeContent: React.FC = () => {
             <button
               key={service.id}
               onClick={() => setSelectedService(service.id)}
-              className={`p-8 border rounded-xl cursor-pointer transition-colors duration-300 transform ${
-                selectedService === service.id ? 'bg-blue-600 text-white scale-105' : 'bg-gray-200 text-black hover:bg-gray-300 hover:scale-105'
-              } flex items-center justify-center text-2xl md:text-3xl font-semibold focus:outline-none focus:ring-4 focus:ring-blue-500`}
+              className={`py-8 px-16 border rounded-xl cursor-pointer transition-colors duration-300 transform flex items-center justify-center text-2xl md:text-3xl font-semibold focus:outline-none ${
+                selectedService === service.id
+                  ? 'bg-red-600 text-white border-red-600 focus:ring-0'
+                  : 'bg-white text-gray-400 border-gray-300 hover:bg-gray-100 hover:border-gray-400'
+              }`}
             >
               {service.label}
             </button>
@@ -65,7 +67,7 @@ const HomeContent: React.FC = () => {
         </div>
 
         {/* Right Side: Display Image */}
-        <div className="mt-16 md:mt-0 md:ml-16 flex-grow flex justify-center">
+        <div className="mt-16 md:mt-0 flex-grow flex justify-center">
           <div
             className="relative"
             style={{
@@ -76,7 +78,7 @@ const HomeContent: React.FC = () => {
             <img
               src={services.find((s) => s.id === selectedService)?.image || 'default.jpg'}
               alt={`상세 정보: ${services.find((s) => s.id === selectedService)?.label}`}
-              className="object-cover w-full h-full rounded-xl shadow-2xl"
+              className="object-cover w-full h-full rounded-xl shadow-2xl" // Changed to rounded-xl for a more rounded corner
               style={{
                 transition: 'all 0.3s ease-in-out',
               }}
