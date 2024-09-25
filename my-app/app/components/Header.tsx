@@ -7,6 +7,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
+    console.log('Toggle menu clicked'); // 클릭 시 로그 확인
     setIsOpen(!isOpen);
   };
 
@@ -59,7 +60,12 @@ export default function Header() {
 
         {/* 모바일 버전 햄버거 메뉴 */}
         <div className="md:hidden flex items-center ml-auto">
-          <button onClick={toggleMenu} className="text-gray-600 focus:outline-none mr-4" aria-expanded={isOpen} aria-controls="mobile-menu">
+          <button
+            onClick={toggleMenu}
+            className="text-gray-600 focus:outline-none mr-4"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+          >
             {isOpen ? (
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -76,7 +82,7 @@ export default function Header() {
       {/* 모바일 메뉴 */}
       <nav
         id="mobile-menu"
-        className={`w-full bg-gray-100 flex flex-col items-start text-gray-600 font-bold text-sm md:hidden overflow-hidden transition-all duration-300 ease-in-out $ {
+        className={`w-full bg-gray-100 flex flex-col items-start text-gray-600 font-bold text-sm md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? 'max-h-screen py-4' : 'max-h-0 py-0'
         }`}
       >
