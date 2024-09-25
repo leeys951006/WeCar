@@ -15,7 +15,9 @@ export default function Header() {
       <div className="flex items-center justify-start p-2">
         {/* 로고 */}
         <div className="flex-shrink-0">
-          <img src="/wecar_logo.png" alt="Wecar Logo" className="w-[165px] h-[60px] ml-4 md:ml-28 md:w-[300px] md:h-[100px]" />
+          <a href="/" className="flex items-center">
+            <img src="/wecar_logo.png" alt="Wecar Logo" className="w-[165px] h-[60px] ml-4 md:ml-28 md:w-[300px] md:h-[100px]" />
+          </a>
         </div>
 
         {/* PC 버전 네비게이션 */}
@@ -74,7 +76,7 @@ export default function Header() {
       {/* 모바일 메뉴 */}
       <nav
         id="mobile-menu"
-        className={`w-full bg-gray-100 flex flex-col items-start text-gray-600 font-bold text-sm md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`w-full bg-gray-100 flex flex-col items-start text-gray-600 font-bold text-sm md:hidden overflow-hidden transition-all duration-300 ease-in-out $ {
           isOpen ? 'max-h-screen py-4' : 'max-h-0 py-0'
         }`}
       >
